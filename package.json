@@ -2,8 +2,7 @@
   "name": "context-model",
   "version": "1.0.0",
   "description": "A simple wrapper for the Context API.",
-  "type": "module",
-  "main": "./lib/cjs/index.js",
+  "main": "./lib/cjs/index.cjs",
   "module": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {

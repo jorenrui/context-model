@@ -8,7 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ### Added
 - Add CommonJS Version
 - Reduce bundle size
-### Fix
+
+### Changed
+- Rename dist folder to lib
+
+### Fixed
 - Fix import of ES Module
 
 ## [[1.0.0]](https://github.com/jorenrui/create-project/releases/tag/v1.0.0) - 2020-07-28

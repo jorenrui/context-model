@@ -1,6 +1,6 @@
 {
   "name": "context-model",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A simple wrapper for the Context API.",
   "main": "./lib/cjs/index.cjs",
   "module": "lib/index.js",

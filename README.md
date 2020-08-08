@@ -154,7 +154,7 @@ function App() {
 
 ### useStore hook
 
-To **consume** the context, you may use the `useStore` hook.
+To **consume** the context, you may use the `useStore` hook. This returns the state object.
 
 ```javascript
 function Count() {
@@ -184,12 +184,18 @@ const store = Counter.useStore();
 
 // Deconstructing the state object
 const { count, reset } = Counter.useStore();
+```
 
+### useSelector hook
+
+To **consume** and **transform** the context, you may use the `useSelector` hook. This takes in a selector function as its props then returns a value based on the given function.
+
+```javascript
 // Providing a callback function that transforms the store value
-const count = Counter.useStore((state) => state.count + 10);
-const [incrementedCount, decrementedCount] = Counter.useStore((state) => [
+const count = Counter.useSelector((state) => state.count + 10);
+const [incrementedCount, decrementedCount] = Counter.useSelector((state) => [
   state.count + 1,
-  state.decrement - 1,
+  state.count - 1,
 ]);
 
 // Or you can do it like this 👀
@@ -197,10 +203,10 @@ function addTen(number) {
   return number + 10;
 }
 
-const count = Counter.useStore((state) => addTen(state.number));
+const count = Counter.useSelector((state) => addTen(state.number));
 
 // This callback function is also useful for picking specific value(s) from the store like so:
-const count = Counter.useStore((state) => state.count);
+const count = Counter.useSelector((state) => state.count);
 ```
 
 ### Options

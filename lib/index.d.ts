@@ -26,7 +26,7 @@
  * @author Joeylene Rivera
  */
 import React from 'react';
-import { IConfig, ISelectorProps } from './types';
+import { IConfig, ISelector } from './types';
 /**
  * ANCHOR Context Model
  * Uses the Context API for state management.
@@ -38,5 +38,6 @@ import { IConfig, ISelectorProps } from './types';
  */
 export default function createStore<State, Props = {}>(model: (props: Props) => State, config?: IConfig): {
     Provider: React.FC<Props>;
-    useStore: (selector?: ISelectorProps<State> | undefined) => any;
+    useStore: () => State;
+    useSelector: <T>(selector: ISelector<State, T>) => T;
 };

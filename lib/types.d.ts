@@ -1,4 +1,4 @@
 export interface IConfig {
     displayName: string;
 }
-export declare type ISelectorProps<State> = (state: State) => any;
+export declare type ISelector<State, R> = (state: State) => R;

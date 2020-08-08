@@ -29,7 +29,7 @@
 import React from 'react';
 
 // ANCHOR Types
-import { IConfig, ISelectorProps } from './types';
+import { IConfig, ISelector } from './types';
 
 /**
  * ANCHOR Context Model
@@ -85,25 +85,37 @@ export default function createStore<State, Props = {}>(
   /**
    * ANCHOR useStore
    * Acts as a Consumer. Used for consuming the context from the Provider.
-   * 
-   * @param mapState A callback function that transforms the state/value
+   * Returns the state.
    */
-  function useStore (selector?: ISelectorProps<State>) {
+  const useStore = () => {
     const state = React.useContext(Context);
 
     if (!state) {
       throw new Error(`The useStore must have a parent ${displayName} Provider`);
     }
 
-    if (selector) {
-      return selector(state);
+    return state;
+  }
+  
+  /**
+   * ANCHOR useSelector
+   * Acts as a Consumer. Used for consuming the context from the Provider.
+   * Returns a value based on a given selector.
+   * @param selector A callback function that transforms the state/value
+   */
+  function useSelector<T>(selector: ISelector<State, T>) {
+    const state = React.useContext(Context);
+
+    if (!state) {
+      throw new Error(`The useStore must have a parent ${displayName} Provider`);
     }
 
-    return state;
+    return selector(state);
   }
 
   return {
     Provider,
     useStore,
+    useSelector,
   };
 }

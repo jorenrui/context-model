@@ -1,6 +1,6 @@
 /**
  * @license
- * 
+ *
  * MIT License
  *
  * Copyright (c) 2020 Joeylene Rivera
@@ -22,7 +22,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * @author Joeylene Rivera
  */
 // ANCHOR React
@@ -35,7 +35,7 @@ import { IConfig, ISelector } from './types';
  * ANCHOR Context Model
  * Uses the Context API for state management.
  * Returns an object with `Provider` and `useStore` methods.
- * 
+ *
  * @param model A function that contains the logic for state management
  * @param config An optional configuration object for the context,
  * includes a displayName of the model for debugging purposes
@@ -68,7 +68,7 @@ export default function createStore<State, Props = {}>(
    *    </ModelName.Provider>
    * - The value of context is retrieved from the given model function
    * in `createStore`
-   * 
+   *
    * @param props The props of the provider component. Type is derived from
    * the given type `Props` in `createContext`
    */
@@ -96,7 +96,7 @@ export default function createStore<State, Props = {}>(
 
     return state;
   }
-  
+
   /**
    * ANCHOR useSelector
    * Acts as a Consumer. Used for consuming the context from the Provider.

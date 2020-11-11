@@ -2,8 +2,8 @@
 
 > A personal context API wrapper for state management driven by the desire to learn more and experiment.
 
-[![2.0.0 NPM Version](https://img.shields.io/badge/npm-v2.0.0-orange)](http://npmjs.com/package/context-model)
-[![MIT License Status](https://img.shields.io/badge/license-MIT-blue)](https://github.com/jorenrui/context-model/blob/master/LICENSE)
+[![2.0.2 NPM Version](https://img.shields.io/badge/npm-v2.0.2-orange)](http://npmjs.com/package/context-model)
+[![MIT License Status](https://img.shields.io/badge/license-MIT-blue)](https://github.com/jorenrui/context-model/blob/main/LICENSE)
 
 A simple wrapper for the Context API.
 
@@ -216,8 +216,8 @@ A list of all things Context API. You might want to check it out if you're also 
 
 ## Changelog
 
-[Changelog](https://github.com/jorenrui/context-model/blob/master/CHANGELOG.md)
+[Changelog](https://github.com/jorenrui/context-model/blob/main/CHANGELOG.md)
 
 ## License
 
-[MIT](https://github.com/jorenrui/context-model/blob/master/LICENSE) © [Joeylene Rivera](https://github.com/jorenrui)
+[MIT](https://github.com/jorenrui/context-model/blob/main/LICENSE) © [Joeylene Rivera](https://github.com/jorenrui)

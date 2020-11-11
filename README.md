@@ -13,12 +13,10 @@ Install it using [yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/):
 
 ```bash
 # Using NPM
-npx context-model
-# or
 npm install --save context-model
 
 # Using Yarn
-yarn context-model
+yarn add context-model
 ```
 
 ## Usage
@@ -31,7 +29,7 @@ First define the **Context Model**:
 
 ```javascript
 // ANCHOR React
-import React from 'react';
+import { useState } from 'react';
 
 // ANCHOR Model
 import createStore from 'context-model';
@@ -42,7 +40,7 @@ import createStore from 'context-model';
  * `contextModel` will return an object with `Provider` and `useStore` methods.
  */
 const Counter = createStore(({ initialCount }) => {
-    const [count, setCount] = React.useState(initialCount ?? 0);
+    const [count, setCount] = useState(initialCount ?? 0);
 
     const increment = () => {
       setCount((count) => count + 1);
@@ -74,7 +72,7 @@ First define the **Context Model**:
 
 ```typescript
 // ANCHOR React
-import React from 'react';
+import { useState } from 'react';
 
 // ANCHOR Model
 import createStore from 'context-model';
@@ -83,7 +81,7 @@ import createStore from 'context-model';
  * ANCHOR IProps
  * This will be the basis for the type of
  * the context model's provider component
- * 
+ *
  * The following example makes the initialCount
  * prop optional
  */
@@ -92,24 +90,11 @@ interface IProps {
 }
 
 /**
- * ANCHOR IState
- * This will be the basis for the type of
- * the return value of the function given to
- * `createStore`.
- */
-interface IState {
-  count: number;
-  increment: () => void;
-  decrement: () => void;
-  reset: () => void;
-}
-
-/**
  * ANCHOR Counter
  * Creating a Counter context model using `createStore`.
  * `contextModel` will return an object with `Provider` and `useStore` methods.
  */
-const Counter = createStore<IState, IProps>(({ initialCount }) => {
+const Counter = createStore(({ initialCount }: IProps) => {
     const [count, setCount] = React.useState(initialCount ?? 0);
 
     const increment = () => {
@@ -124,7 +109,6 @@ const Counter = createStore<IState, IProps>(({ initialCount }) => {
       setCount(0);
     }
 
-    // Based on type IState
     return {
       count,
       increment,
@@ -167,7 +151,7 @@ function Controls() {
   const { increment, decrement, reset } = Counter.useStore();
 
   return (
-    <>    
+    <>
       <button onClick={increment}>increment</button>
       <button onClick={decrement}>decrement</button>
       <button onClick={reset}>reset</button>

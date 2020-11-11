@@ -95,7 +95,7 @@ export default function createStore<State, Props = {}>(
     }
 
     return state;
-  }
+  };
 
   /**
    * ANCHOR useSelector

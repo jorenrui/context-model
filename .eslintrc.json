@@ -1,23 +1,26 @@
 {
   "env": {
+    "browser": true,
     "es6": true,
     "node": true
   },
   "extends": [
-    "airbnb",
-    "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended"
+    "airbnb"
   ],
   "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
+    "React": "writable"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 2018
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
   },
   "plugins": [
+    "react",
     "@typescript-eslint"
   ],
   "settings": {
@@ -38,6 +41,15 @@
         "tsx": "never"
       }
     ],
-    "import/prefer-default-export": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/prop-types": "off",
+    "import/no-unresolved": "off",
+    "react/no-array-index-key": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/destructuring-assignment": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-unused-vars": [2, { "args": "none" }],
+    "@typescript-eslint/explicit-function-return-type": "off"
   }
 }
